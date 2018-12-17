@@ -1,0 +1,14 @@
+.idea
+Akademia Pythona
+UwolnicPytona-Warsztaty2018-2
+Prework warsztaty python szczecin.pdf
+
+
+# Environments
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
