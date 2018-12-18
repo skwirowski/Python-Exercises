@@ -18,10 +18,9 @@
 
 
 def main():
-    another_operation = "y"
-    math_operators_arr = ["+", "-", "*", "/", "%"]
+    end = False
 
-    while another_operation == "y":
+    while not end:
         print("Input in separate lines integer, mathematical operation: +, -, *, /, %, and another integer:")
         while True:
             try:
@@ -33,6 +32,7 @@ def main():
 
         while True:
             math_operator = input()
+            math_operators_arr = ["+", "-", "*", "/", "%"]
             if math_operator in math_operators_arr:
                 break
             else:
@@ -64,6 +64,11 @@ def main():
         print(f'Your result is: {calculation}')
         print("Do you want to perform another operation? Type y (yes) or n (not).")
         another_operation = input()
+        if another_operation == "n":
+            end = True
+        elif another_operation != "y":
+            print("Invalid input")
+            break
 
 
 if __name__ == "__main__":
