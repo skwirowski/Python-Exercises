@@ -18,11 +18,13 @@ for book in recent_books:
 print(len(recent_coding_books))
 print('Duration: {} seconds'.format(time.time() - start))
 
+# optimized code with use of vectors
 start = time.time()
 recent_coding_books = np.intersect1d(recent_books, coding_books)
 print(len(recent_coding_books))
 print('Duration: {} seconds'.format(time.time() - start))
 
+# optimized code with use of set
 start = time.time()
 recent_coding_books = set(recent_books).intersection(coding_books)
 print(len(recent_coding_books))
