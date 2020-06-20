@@ -1,6 +1,7 @@
 .idea
 **/.vscode
 **/pandas
+**/__pycache__
 Akademia Pythona
 UwolnicPytona-Warsztaty2018-2
 Prework warsztaty python szczecin.pdf
