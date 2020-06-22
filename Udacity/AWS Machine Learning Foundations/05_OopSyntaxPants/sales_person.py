@@ -1,6 +1,5 @@
 from oop_syntax_pants import Pants
 
-
 # TODO:
 #   Code a SalesPerson class with the following attributes
 #   - first_name (string), the first name of the salesperson
@@ -13,14 +12,25 @@ from oop_syntax_pants import Pants
 
 # TODO: Declare the SalesPerson Class
 
-# TODO: write an __init__ function to initialize the attributes
-#    Input Args for the __init__ function:
-#        first_name (str)
-#        last_name (str)
-#        employee_id (int)
-#        salary (float)
-#  You can initialize pants_sold as an empty list
-#  You can initialize total_sales to zero.
+
+class SalesPerson:
+
+    # TODO: write an __init__ function to initialize the attributes
+    #    Input Args for the __init__ function:
+    #        first_name (str)
+    #        last_name (str)
+    #        employee_id (int)
+    #        salary (float)
+    #  You can initialize pants_sold as an empty list
+    #  You can initialize total_sales to zero.
+
+    def __init__(self, first_name, last_name, employee_id, salary):
+        self.first_name = first_name
+        self.last_name = last_name
+        self.employee_id = employee_id
+        self.salary = salary
+        self.pants_sold = []
+        self.total_sales = 0
 
 # TODO: write a sell_pants method:
 #    This method receives a Pants object and appends
@@ -30,6 +40,9 @@ from oop_syntax_pants import Pants
 #    Returns:
 #        None
 
+    def sell_pants(self, pants):
+        self.pants_sold.append(pants)
+
 # TODO: write a display_sales method:
 #    This method has no input or outputs. When this method
 #    is called, the code iterates through the pants_sold list
@@ -37,6 +50,11 @@ from oop_syntax_pants import Pants
 #    line by line. The print out should look something like this:
 #        color: blue, waist_size: 34, length: 34, price: 10
 #        color: red, waist_size: 36, length: 30, price: 14.15
+
+    def display_sales(self):
+        for pants in self.pants_sold:
+            print(
+                f'color: {pants.color}, waist_size: {pants.waist_size}, length: {pants.length}, price: {pants.price}')
 
 # TODO: write a calculate_sales method:
 #      This method calculates the total sales for the sales person.
@@ -48,6 +66,14 @@ from oop_syntax_pants import Pants
 #      Returns:
 #        float: total sales
 
+    def calculate_sales(self):
+        total = 0
+        for sales in self.pants_sold:
+            total += sales.price
+
+        self.total_sales = total
+        return total
+
 # TODO: write a calculate_commission method:
 #   The salesperson receives a commission based on the total
 #   sales of pants. The method receives a percentage, and then
@@ -57,31 +83,6 @@ from oop_syntax_pants import Pants
 #       percentage (float): commission percentage as a decimal
 #   Returns:
 #       float: total commission
-
-
-class SalesPerson:
-    def __init__(self, first_name, last_name, employee_id, salary):
-        self.first_name = first_name
-        self.last_name = last_name
-        self.employee_id = employee_id
-        self.salary = salary
-        self.pants_sold = []
-        self.total_sales = 0
-
-    def sell_pants(self, pants):
-        self.pants_sold.append(pants)
-
-    def display_sales(self):
-        for pants in self.pants_sold:
-            print(f'color: {pants.color}, waist_size: {pants.waist_size}, length: {pants.length}, price: {pants.price}')
-
-    def calculate_sales(self):
-        total = 0
-        for sales in self.pants_sold:
-            total += sales.price
-
-        self.total_sales = total
-        return total
 
     def calculate_commission(self, commission):
         sales_total = self.calculate_sales()

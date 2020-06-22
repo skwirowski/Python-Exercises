@@ -2,6 +2,7 @@
 **/.vscode
 **/pandas
 **/__pycache__
+**/.pytest_cache
 Akademia Pythona
 UwolnicPytona-Warsztaty2018-2
 Prework warsztaty python szczecin.pdf
